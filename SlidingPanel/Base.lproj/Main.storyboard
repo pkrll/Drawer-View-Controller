@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Za7-dr-vPy">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sliding Panel-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="SlidingPanel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sliding Panel" id="13l-c8-LYM">
+                        <barButtonItem key="leftBarButtonItem" image="listIcon" id="MR7-nr-vgr">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="toggleMenu:" destination="BYZ-38-t0r" id="UQV-Ti-Wdx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="643.5" y="315.5"/>
+        </scene>
+        <!--Left View Controller-->
+        <scene sceneID="3E5-cy-irJ">
+            <objects>
+                <viewController storyboardIdentifier="LeftViewController" id="EfN-84-1hd" customClass="LeftViewController" customModule="SlidingPanel" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Awu-5W-Sv5"/>
+                        <viewControllerLayoutGuide type="bottom" id="dPf-Bg-KQz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eac-FW-Ueb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MfR-X1-pxt">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.042805591255357767" green="0.68255133311832084" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="menuCell" rowHeight="70" id="ACY-5R-M3N">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ACY-5R-M3N" id="zJO-rQ-FCc">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQq-WK-c8L">
+                                                    <rect key="frame" x="24" y="8" width="343" height="49"/>
+                                                    <fontDescription key="fontDescription" name="GujaratiSangamMN" family="Gujarati Sangam MN" pointSize="25"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.042805591259999998" green="0.68255133310000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="JQq-WK-c8L" firstAttribute="top" secondItem="zJO-rQ-FCc" secondAttribute="topMargin" id="cSt-Hy-y4J"/>
+                                                <constraint firstItem="JQq-WK-c8L" firstAttribute="centerY" secondItem="zJO-rQ-FCc" secondAttribute="centerY" constant="-2.5" id="fqV-ip-rRC"/>
+                                                <constraint firstItem="JQq-WK-c8L" firstAttribute="leading" secondItem="zJO-rQ-FCc" secondAttribute="leadingMargin" constant="16" id="gjs-gm-DAF"/>
+                                                <constraint firstItem="JQq-WK-c8L" firstAttribute="trailing" secondItem="zJO-rQ-FCc" secondAttribute="trailingMargin" id="v7x-MO-ypS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.042805591259999998" green="0.68255133310000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MfR-X1-pxt" secondAttribute="trailing" id="RfC-zK-TOF"/>
+                            <constraint firstItem="MfR-X1-pxt" firstAttribute="bottom" secondItem="dPf-Bg-KQz" secondAttribute="top" id="ZLD-hN-6Jb"/>
+                            <constraint firstItem="MfR-X1-pxt" firstAttribute="top" secondItem="Eac-FW-Ueb" secondAttribute="top" constant="20" id="uZk-oa-Uns"/>
+                            <constraint firstItem="MfR-X1-pxt" firstAttribute="leading" secondItem="Eac-FW-Ueb" secondAttribute="leading" id="y1o-9T-91Z"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="tableView" destination="MfR-X1-pxt" id="7sH-RJ-ub1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQB-ir-b2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244.5" y="1037.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="opg-Uk-hZc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Za7-dr-vPy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R3n-L6-FBQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.59064503209999997" green="0.12130524650000001" blue="0.12121884569999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.94989983970000003" green="0.94989983970000003" blue="0.94989983970000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gWG-td-Xvr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyu-Jg-TdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="316"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="listIcon" width="22" height="22"/>
+    </resources>
+</document>
