@@ -25,10 +25,6 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     self.tableView.dataSource = self
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-  }
-  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.menuItems.count
   }
@@ -37,10 +33,33 @@ class LeftViewController: UIViewController, UITableViewDelegate, UITableViewData
     let cell = tableView.dequeueReusableCellWithIdentifier("menuCell")!
     
     if let label = cell.viewWithTag(100) as? UILabel {
-      label.text = self.menuItems[indexPath.row]
+      let text = self.menuItems[indexPath.row]
+      
+      if text.isEmpty == false {
+        label.text = text
+      } else {
+        label.text = nil
+      }
     }
     
     return cell
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    if let parentViewController = self.parentViewController as? DrawerViewController {
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      let controller: UIViewController
+      
+      if indexPath.row == 0 {
+        controller = storyboard.instantiateInitialViewController()!
+      } else {
+        controller = storyboard.instantiateViewControllerWithIdentifier("MessagesNavigation")
+      }
+
+      parentViewController.transition(toViewController: controller, animated: true, withDuration: 0.5, completion: { () -> Void? in
+        print("Done!")
+      })
+    }
   }
   
 }

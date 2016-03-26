@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let mainViewController = storyboard.instantiateInitialViewController()!
     let leftViewController = storyboard.instantiateViewControllerWithIdentifier("LeftViewController")
-    let slidingPanelController = SlidingPanelController(mainViewController: mainViewController, leftViewController: leftViewController)
+    let slidingPanelController = DrawerViewController(rootViewController: mainViewController, leftViewController: leftViewController)
 
     slidingPanelController.statusBarStyle = .LightContent
     
